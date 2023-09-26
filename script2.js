@@ -1,4 +1,4 @@
-import { app } from './Firebase/firebase.js';
+import { app } from 'Firebase/firebase.js';
 import { getDatabase, ref, push, onValue, set } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js';
 
 const database = getDatabase(app);
