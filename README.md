@@ -24,6 +24,12 @@ This ToDo List Web Application is designed to help you manage your tasks efficie
 ## Link
 https://vedantvatsa.github.io/To-Do/
 
+## Screenshot
+<img width="946" alt="image" src="https://github.com/VedantVatsa/To-Do/assets/122670026/9f68d861-c373-43e2-9de6-5951e5ee2c8c">
+<img width="948" alt="image" src="https://github.com/VedantVatsa/To-Do/assets/122670026/9af1e0a6-534f-4c99-85bb-71eefb9b4180">
+<img width="947" alt="image" src="https://github.com/VedantVatsa/To-Do/assets/122670026/76737c25-aeda-47d5-9eca-f28938dbfc6c">
+
+
 ## Usage
 1. Open the application in your web browser.
 
