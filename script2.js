@@ -2,7 +2,7 @@ import { app } from './Firebase/firebase.js';
 import { getDatabase, ref, push, onValue, set } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js';
 
 const database = getDatabase(app);
-
+let tasks = [];
 document.addEventListener('DOMContentLoaded', function () {
     const taskInput = document.getElementById('task');
     const addTaskButton = document.getElementById('addTask');
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const userTasksRef = ref(database, `${userUid}/tasks`);
         onValue(userTasksRef, (snapshot) => {
             const tasksData = snapshot.val() || {};
-            const tasks = Object.keys(tasksData).map((taskId) => ({
+            tasks = Object.keys(tasksData).map((taskId) => ({
                 id: taskId,
                 ...tasksData[taskId],
             }));
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
         set(userTasksRef, tasksData);
     }
 
-    let tasks = [];
+
 
     // Get the user's UID from session storage
     const userUid = sessionStorage.getItem("user");
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
         tasks.forEach((task) => {
             const li = document.createElement('li');
             li.innerHTML = `
-                <input type="checkbox" class="task-checkbox" data-id="${task.id}" ${task.completed ? 'checked' : ''}>
+                <input type="checkbox" name="checkbox" class="task-checkbox" data-id="${task.id}" ${task.completed ? 'checked' : ''}>
                 <span class="${task.completed ? 'completed' : ''}">${task.text}</span>
                 <button class="delete" data-id="${task.id}">Delete</button>
             `;
@@ -89,36 +89,45 @@ document.addEventListener('DOMContentLoaded', function () {
         set(userTaskRef, { text: task.text, completed: task.completed });
     }
 
-    taskList.addEventListener('click', function (event) {
-        if (event.target.classList.contains('delete')) {
-            const taskId = event.target.getAttribute('data-id');
-            if (taskId) {
-                // Filter out the deleted task
-                tasks = tasks.filter((task) => task.id !== taskId);
-                renderTasks(tasks);
-
-                // Delete the task from the database
-                deleteTaskFromDatabase(userUid, taskId);
-            }
-        } else if (event.target.classList.contains('task-checkbox')) {
-            const taskId = event.target.getAttribute('data-id');
-            if (taskId) {
-                const task = tasks.find((t) => t.id === taskId);
-                if (task) {
-                    task.completed = event.target.checked;
-                    renderTasks(tasks);
-
-                    // Update the task in the database
-                    saveTaskToDatabase(userUid, task);
+        function registerEventListeners() {
+            // Event listener for the checkbox
+            taskList.addEventListener('change', function (event) {
+                if (event.target.classList.contains('task-checkbox')) {
+                    const taskId = event.target.getAttribute('data-id');
+                    if (taskId) {
+                        const task = tasks.find((t) => t.id === taskId);
+                        if (task) {
+                            task.completed = event.target.checked;
+                            renderTasks(tasks);
+        
+                            // Update the task in the database
+                            saveTaskToDatabase(userUid, task);
+                        }
+                    }
                 }
-            }
+            });
+        
+            // Event listener for the delete button
+            taskList.addEventListener('click', function (event) {
+                if (event.target.classList.contains('delete')) {
+                    const taskId = event.target.getAttribute('data-id');
+                    if (taskId) {
+                        // Filter out the deleted task
+                        tasks = tasks.filter((task) => task.id !== taskId);
+                        renderTasks(tasks);
+        
+                        // Delete the task from the database
+                        deleteTaskFromDatabase(userUid, taskId);
+                    }
+                }
+            });
         }
-    });
-
+        registerEventListeners();
     // Function to delete a task from Realtime Database
     function deleteTaskFromDatabase(userUid, taskId) {
         const userTaskRef = ref(database, `${userUid}/tasks/${taskId}`);
         set(userTaskRef, null); // Setting the task to null deletes it from the database
     }
+    
 
 });
