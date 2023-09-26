@@ -1,10 +1,11 @@
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Mooli&family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* Global styles for the body */
 body {
     font-family: 'Mooli', 'Poppins', sans-serif;
     text-align: center;
     background: linear-gradient(135deg, #3498db, #9b59b6); /* Updated gradient colors */
-
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -16,7 +17,7 @@ body {
     border-radius: 10px;
 }
 
-
+/* Styles for the navbar */
 .navbar {
     justify-content: space-between;
     padding: 10px 20px;
@@ -28,13 +29,13 @@ body {
     margin-right: auto;
 }
 
-/* Style the logout button in the left corner */
+/* Styles for the left corner of the navbar */
 .navbar-left {
     display: flex;
     align-items: center;
 }
 
-/* Style the logout button */
+/* Styles for the logout button */
 #logout-button {
     background-color: transparent;
     border: none;
@@ -57,6 +58,7 @@ body {
     color: #333;
 }
 
+/* Styles for the container */
 .container {
     font-family: 'Mooli', 'Poppins', sans-serif;
     width: 100%;
@@ -74,12 +76,13 @@ body {
     margin-top: 70px; /* Add margin-top to create a gap from navbar */
 }
 
+/* Styles for heading h1 */
 h1 {
     color: #333;
     margin-bottom: 20px;
-    
 }
 
+/* Styles for the input container */
 .input-container {
     display: flex;
     flex-direction: column;
@@ -87,6 +90,7 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* Styles for text input */
 input[type="text"] {
     width: 100%;
     padding: 10px;
@@ -96,6 +100,7 @@ input[type="text"] {
     outline: none;
 }
 
+/* Styles for the delete button */
 .delete {
     display: flex;
     justify-content: center;
@@ -110,6 +115,7 @@ input[type="text"] {
     margin-top: 10px;
 }
 
+/* Styles for the generic button */
 button {
     font-family: 'Mooli', 'Poppins', sans-serif;
     background-color: transparent;
@@ -130,19 +136,21 @@ button:hover {
     background-color: #fff;
     color: #333;
 }
-/* Style for the logo image */
+
+/* Styles for the logo image */
 .logo-img {
     width: 50px; /* Set the desired width */
     height: auto; /* Maintain aspect ratio */
     margin-right: 10px; /* Add some spacing to the right of the logo */
 }
 
-
+/* Styles for the list */
 ul {
     list-style: none;
     padding: 0;
 }
 
+/* Styles for list items */
 li {
     display: flex;
     justify-content: space-between;
@@ -152,11 +160,13 @@ li {
     transition: background-color 0.3s ease-in-out;
 }
 
+/* Styles for completed tasks */
 .completed {
     text-decoration: line-through;
     color: #888;
 }
 
+/* Styles for the delete button in the list */
 .delete {
     background-color: #e74c3c;
     color: #fff;
@@ -167,15 +177,18 @@ li {
     transition: background-color 0.3s ease-in-out;
 }
 
+/* Hover effect for the delete button */
 .delete:hover {
     background-color: #c0392b;
 }
 
+/* Styles for the task checkbox */
 .task-checkbox {
     margin-right: 10px;
     cursor: pointer;
 }
 
+/* Media query for smaller screens */
 @media screen and (max-width: 601px) {
     .input-container {
         margin-bottom: 20px;
@@ -194,7 +207,7 @@ li {
     }
 }
 
-/* Style checkboxes */
+/* Styles for checkboxes */
 input[type="checkbox"] {
     appearance: none; /* Hide the default checkbox */
     width: 20px;
@@ -206,7 +219,7 @@ input[type="checkbox"] {
     position: relative;
 }
 
-/* Style the checked state of the checkbox */
+/* Styles for the checked state of the checkbox */
 input[type="checkbox"]:checked::before {
     content: '\2713'; /* Unicode checkmark character */
     font-size: 16px;
@@ -217,7 +230,7 @@ input[type="checkbox"]:checked::before {
     transform: translate(-50%, -50%);
 }
 
-/* Style the checkbox when it's in the hover state */
+/* Styles for the checkbox when it's in the hover state */
 input[type="checkbox"]:hover {
     border-color: #45a049; /* Border color on hover */
 }

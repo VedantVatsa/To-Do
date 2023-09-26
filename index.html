@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Firebase JavaScript SDK -->
   <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js" type="module"></script>
   <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js" type="module"></script>
   <script src="Firebase/firebase.js" type="module"></script>
@@ -12,7 +13,9 @@
   <link rel="stylesheet" href="styles.css"> <!-- You can link your own CSS file here -->
 </head>
 <body>
+  <!-- Login and Signup Forms -->
   <section class="container forms">
+    <!-- Login Form -->
     <div class="form login">
         <div class="form-content">
             <header>Login</header>
@@ -22,8 +25,9 @@
                 </div>
                 <div class="field input-field">
                     <input type="password" placeholder="Password" class="password" name="password" autocomplete="current-password">
-                    <i class='bx bx-hide eye-icon'></i>
+                    <i class='bx bx-hide eye-icon'></i> <!-- Password visibility icon -->
                 </div>
+                <!-- Uncomment the following lines for a "Forgot password?" link -->
                 <!-- <div class="form-link">
                     <a href="#" class="forgot-pass">Forgot password?</a>
                 </div> -->
@@ -38,16 +42,16 @@
         
         <div class="line"></div>
 
+        <!-- Login with Google -->
         <div class="media-options">
             <a href="#" class="field google" id="google-login">
                 <img src="image/google.png" alt="" class="google-img">
                 <span>Login with Google</span>
             </a>
-            
         </div>
-
     </div>
 
+    <!-- Signup Form -->
     <div class="form signup">
         <div class="form-content">
             <header>SignUp</header>
@@ -60,7 +64,7 @@
                 </div>
                 <div class="field input-field">
                     <input type="password" placeholder="Password" class="password" name="password">
-                    <i class='bx bx-hide eye-icon'></i>
+                    <i class='bx bx-hide eye-icon'></i> <!-- Password visibility icon -->
                 </div>
                 <div class="field button-field">
                     <button>SignUp</button>
@@ -73,19 +77,17 @@
         
         <div class="line"></div>
     
+        <!-- Login with Google -->
         <div class="media-options">
             <a href="#" class="field google">
                 <img src="image/google.png" class="google-img">
                 <span>Login with Google</span>
             </a>
-            
         </div>
-    
     </div>
-
-    
   </section>
   
+  <!-- JavaScript file for handling functionality -->
   <script src="script.js" type="module"></script>
 </body>
 </html>

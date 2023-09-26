@@ -1,5 +1,7 @@
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
+/* Global styles for all elements */
 * {
     margin: 0;
     padding: 0;
@@ -7,21 +9,23 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* Body styles */
 body {
     background-color: #95783a; /* Updated background color for the body */
 }
 
+/* Container styles */
 .container {
     height: 100vh;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.1); /* Adjust the opacity as needed */
-
     display: flex;
     align-items: center;
     justify-content: center;
     column-gap: 30px;
 }
 
+/* Form styles */
 .form {
     position: absolute;
     background: #fff;
@@ -33,21 +37,25 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
 }
 
+/* Signup form styles */
 .form.signup {
     opacity: 0;
     pointer-events: none;
 }
 
+/* Show signup form on toggle */
 .forms.show-signup .form.signup {
     opacity: 1;
     pointer-events: auto;
 }
 
+/* Hide login form on toggle */
 .forms.show-signup .form.login {
     opacity: 0;
     pointer-events: none;
 }
 
+/* Header styles */
 header {
     font-size: 32px;
     font-weight: 600;
@@ -55,10 +63,12 @@ header {
     text-align: center;
 }
 
+/* Form container styles */
 form {
     margin-top: 40px;
 }
 
+/* Form field styles */
 .form .field {
     height: 50px;
     width: 100%;
@@ -67,6 +77,7 @@ form {
     border-radius: 8px;
 }
 
+/* Input and button styles within form fields */
 .field input,
 .field button {
     height: 100%;
@@ -77,11 +88,13 @@ form {
     border-radius: 8px;
 }
 
+/* Input styles */
 .field input {
     border: 1px solid #ccc; /* Light gray border */
     padding: 0 15px;
 }
 
+/* Eye icon styles */
 .eye-icon {
     position: absolute;
     font-size: 18px;
@@ -93,6 +106,7 @@ form {
     padding: 5px;
 }
 
+/* Button styles within form fields */
 .field button {
     background-color: #fca311; /* Updated button color */
     color: #fff; /* Text color for the button */
@@ -103,15 +117,18 @@ form {
     border-radius: 8px;
 }
 
+/* Button hover effect */
 .field button:hover {
     background-color: #fb923c; /* Darker button color on hover */
 }
 
+/* Form link styles */
 .form-link {
     text-align: center;
     margin-top: 20px; /* Smaller top margin */
 }
 
+/* Text styles for form links */
 .form-link span,
 .form-link a {
     font-size: 14px;
@@ -119,15 +136,18 @@ form {
     color: #555; /* Medium gray text */
 }
 
+/* Anchor styles for form links */
 .form a {
     text-decoration: none;
     color: #007bff;
 }
 
+/* Hover effect for anchor links */
 .form-content a:hover {
     text-decoration: underline;
 }
 
+/* Line styles */
 .line {
     height: 1px;
     width: 100%;
@@ -136,6 +156,7 @@ form {
     margin: 28px 0; /* Smaller margin */
 }
 
+/* Text styles for the line */
 .line::before {
     content: 'Or';
     position: absolute;
@@ -147,24 +168,28 @@ form {
     padding: 0 15px;
 }
 
+/* Media option styles */
 .media-options a {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* Google login link styles */
 a.google {
     color: #016dcb;
     background-color: #fff;
     border: 1px solid #cacaca;
 }
 
+/* Google icon image styles */
 img.google-img {
     height: 20px;
     width: 20px;
     object-fit: cover;
 }
 
+/* Google icon image position styles */
 img.google-img {
     position: absolute;
     top: 50%;
@@ -172,12 +197,14 @@ img.google-img {
     transform: translateY(-50%);
 }
 
+/* Google span text styles */
 a.google span {
     font-weight: 500;
     opacity: 0.6;
     color: #232836;
 }
 
+/* Media query for smaller screens */
 @media screen and (max-width: 400px) {
     .form {
         padding: 15px 10px;
