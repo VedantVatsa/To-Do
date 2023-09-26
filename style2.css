@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Mooli&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Mooli', 'Poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #3498db, #9b59b6); /* Updated gradient colors */
+
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+
+.navbar {
+    justify-content: space-between;
+    padding: 10px 20px;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin-right: auto;
+}
+
+/* Style the logout button in the left corner */
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+/* Style the logout button */
+#logout-button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: 2px solid #fff; /* Add a border */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 1px; /* Add letter spacing */
+    outline: none;
+    margin-left: auto; /* Push the button to the left corner */
+}
+
+/* Hover effect for the logout button */
+#logout-button:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Rest of your CSS... */
+
+
+
+/* Rest of your CSS... */
+
+
+/* Rest of your CSS... */
+
+/* Updated CSS for the container */
+.container {
+    font-family: 'Mooli', 'Poppins', sans-serif;
+    width: 100%;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    font-size: large;
+    text-align: center;
+    margin-top: 40px; /* Increase the margin-top */
+    height: auto; /* Set height to auto to allow it to expand as needed */
+    min-height: 300px; /* Set a minimum height to avoid overlap */
+    margin-top: 70px; /* Add margin-top to create a gap from navbar */
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    
+}
+
+/* Rest of your CSS... */
+
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    outline: none;
+}
+
+.delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+button {
+    font-family: 'Mooli', 'Poppins', sans-serif;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff; /* Add a border */
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 1px; /* Add letter spacing */
+    outline: none;
+    margin-top: 10px;
+}
+
+/* Hover effect for the button */
+button:hover {
+    background-color: #fff;
+    color: #333;
+}
+/* Style for the logo image */
+.logo-img {
+    width: 50px; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Add some spacing to the right of the logo */
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.delete {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.delete:hover {
+    background-color: #c0392b;
+}
+
+.task-checkbox {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 601px) {
+    .input-container {
+        margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+        margin-bottom: 10px;
+    }
+
+    button {
+        max-width: 150px;
+    }
+
+    li {
+        font-size: 16px;
+    }
+}
+
+/* Style checkboxes */
+input[type="checkbox"] {
+    appearance: none; /* Hide the default checkbox */
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 2px solid #333; /* Checkbox border color */
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Style the checked state of the checkbox */
+input[type="checkbox"]:checked::before {
+    content: '\2713'; /* Unicode checkmark character */
+    font-size: 16px;
+    color: #4CAF50; /* Color for checked checkbox */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Style the checkbox when it's in the hover state */
+input[type="checkbox"]:hover {
+    border-color: #45a049; /* Border color on hover */
+}
