@@ -1,6 +1,6 @@
 import { getDatabase, ref, push, onValue, set } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js';
 
-import { firebaseConfig, app } from 'Firebase/firebase.js';
+import { firebaseConfig, app } from './Firebase/firebase.js';
 // Initialize Firebase using the provided configuration
 firebase.initializeApp(firebaseConfig);
 const database = getDatabase(app);
